@@ -1,0 +1,191 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #2b4270, #5fcfff);
+    margin: 0;
+    padding: 0;
+}
+
+.login-container, .welcome-container {
+    text-align: center;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+    box-sizing: border-box;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+input {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background: #2575fc;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background: #1e5dbb;
+    transform: scale(1.05);
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.logo {
+    width: 120px;
+    max-width: 100%;
+    margin-bottom: 15px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+    .login-container, .welcome-container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    input, button {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+
+/* loader */
+
+/* Ocultamos los campos mientras carga el loader */
+.hide-fields input,
+.hide-fields button,
+.hide-fields.error-message {
+    display: none;
+}
+
+/* Loader (Inicialmente oculto) */
+.loading-container {
+    display: none; /* Inicialmente oculto */
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    margin: 20px auto;
+}
+
+.loading-container span {
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    background-color: #3498db;
+    border-radius: 50%;
+    animation: bounce 1.5s infinite ease-in-out;
+}
+
+.loading-container span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.loading-container span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+    0%, 80%, 100% {
+        transform: scale(0);
+        opacity: 0.3;
+    }
+    40% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* Welcome */
+
+/* Contenedor principal */
+.container {
+    text-align: center;
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    max-width: 350px;
+    width: 90%;
+}
+
+/* Título */
+h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+/* Estilo del correo del usuario */
+.user-email {
+    font-size: 18px;
+    color: #4e54c8;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Botón de salida */
+#logoutButton {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #ff4b5c;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+/* Efecto hover */
+#logoutButton:hover {
+    background: #d63a48;
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+    .container {
+        padding: 20px;
+    }
+    h1 {
+        font-size: 20px;
+    }
+    .user-email {
+        font-size: 16px;
+    }
+    #logoutButton {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
